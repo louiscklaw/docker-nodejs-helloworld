@@ -1,0 +1,8 @@
+FROM node
+EXPOSE 80
+RUN apt-get update && apt-get -y install python3 python3-pip && apt-get clean
+#COPY requirements.txt .
+#RUN pip3 install -qr requirements.txt
+#COPY server.py .
+#CMD ["python3", "./server.py"]
+

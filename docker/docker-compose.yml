@@ -1,11 +1,13 @@
 version: '2'
 services:
   nodejs-helloworld:
+    build:
+        dockerfile: dockerfile
+        context: ./
     volumes:
         - ./app_dir:/app
     working_dir: "/app"
     ports:
         - "80:3000"
-    image: node
     command: 'npm start'
 
