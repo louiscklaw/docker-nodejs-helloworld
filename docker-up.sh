@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 
-docker-compose up -d --force-recreate --build --remove-orphans
+cd docker && docker-compose up -d --force-recreate --build --remove-orphans
 
 docker-compose ps
