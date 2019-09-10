@@ -5,7 +5,9 @@ services:
         - ./app_dir:/app
     working_dir: "/app"
     # ports:
-    #     - "80:3000"
+    #     - 3000
+    networks:
+      - proxy
     image: node
     command: 'npm start'
     labels:
@@ -20,3 +22,7 @@ services:
       - "traefik.frontend.entryPoints=http"
       - "traefik.docker.network=proxy"
     container_name: nodejs-helloworld
+
+networks:
+  proxy:
+    external: true
